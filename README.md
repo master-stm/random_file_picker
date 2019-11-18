@@ -1,2 +1,18 @@
 # random_file_picker
 a python code to choose a random video file and play it
+
+import os
+import random
+
+# saves the folder's absolute path in a variable
+files_path = os.path.abspath("C:\\Users\\Downloads\\Video\\")
+
+# prints a message with amount of files in the folder
+print("There are " + str(len(os.listdir(files_path))) + " in this folder")
+
+# prints a random file name from the folder
+print("Here is a random file: " + random.choice(os.listdir(files_path)))
+
+# prints the random picked file, I added the "\\" in the middle to complete a correct file path
+os.startfile(files_path+"\\"+random.choice(os.listdir(files_path)))
+
